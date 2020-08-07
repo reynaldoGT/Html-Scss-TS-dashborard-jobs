@@ -1,0 +1,28 @@
+.group-icons {
+    display: flex;
+    flex-direction: column;
+}
+
+.icono {
+    font-size: 20px;
+    
+    padding: 20px 0;
+    color: $text_color;
+    display: flex;
+    // flex-direction: row;
+    justify-content: center;
+    border-radius: 50%;
+    &:hover {
+        background: $white_hover;
+        cursor: pointer;
+        color: #f7bc93;
+    }
+}
+.borde {
+    border: 1px solid $text_color;
+    border-radius: 5px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+

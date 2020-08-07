@@ -1,0 +1,43 @@
+@mixin color($color) {
+    .size {
+        font-weight: bold;
+    }
+    .icono-bg {
+        font-size: 25px;
+        padding: 10px;
+        border-radius: 50%;
+        color: white;
+    }
+    @if $color == azul {
+        .size {
+            color: $azul;
+        }
+        .icono-bg {
+            background: white;
+            color: $azul;
+            padding: 0;
+            font-size: 40px;
+        }
+    } @else if $color == naranja {
+        .size {
+            color: $naranja;
+        }
+        .icono-bg {
+            background: $naranja;
+        }
+    } @else if $color == amarillo {
+        .size {
+            color: $amarillo;
+        }
+        .icono-bg {
+            background: $amarillo;
+        }
+    } @else if $color == celeste {
+        .size {
+            color: $celeste;
+        }
+        .icono-bg {
+            background: $celeste;
+        }
+    }
+}
