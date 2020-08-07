@@ -9,23 +9,52 @@
 </head>
 
 <body>
+    <div class="menu-responsive">
+        <i class="fas fa-bars" id="menu-bars-responsive"></i>
+        <span>Logo Span</span>
+    </div>
+
     <div class="container">
-        <div class="dashboard">
+        <div class="dashboard" id="dasboard">
             <div class="iconos">
                 <div class="group-icons">
-                    <div class="logo">Logo</div>
-                    <i class="icono fas fa-home"></i>
-                    <i class="icono fas fa-tasks"></i>
-                    <i class="icono fas fa-retweet"></i>
-                    <i class="icono far fa-star"></i>
+
+                    <div class="dash-item title">
+                        <i class="icono fab fa-drupal"></i>
+                        <span>LOGO</span>
+                    </div>
+
+                    <div class="dash-item">
+                        <i class="icono fas fa-home"></i>
+                        <span>Home</span>
+                    </div>
+                    <div class="dash-item">
+                        <i class="icono fas fa-tasks"></i>
+                        <span>Task</span>
+                    </div>
+                    <div class="dash-item">
+                        <i class="icono fas fa-retweet"></i>
+                        <span>Reload</span>
+                    </div>
+                    <div class="dash-item">
+                        <i class="icono far fa-star"></i>
+                        <span>Star</span>
+                    </div>
                 </div>
                 <div class="group-icons">
-                    <i class="icono fas fa-cog"></i>
-                    <i class="icono fas fa-power-off"></i>
+                    <div class="dash-item">
+                        <i class="icono fas fa-cog"></i>
+                        <span>Settings</span>
+                    </div>
+                    <div class="dash-item">
+                        <i class="icono fas fa-power-off"></i>
+                        <span>Logout</span>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="content">
+            <!-- Header -->
             <div class="header">
                 <div class="search">
                     <i class="fas fa-search"></i>
@@ -33,13 +62,17 @@
 
                     <button class="boton">Search</button>
                 </div>
+                <!-- end Header -->
+
+                <!-- Perfil -->
                 <div class="perfil">
                     <i class="borde far fa-bell"></i>
                     <div class="borde perfil-info">
                         <p>Tony Sign</p>
-                        <img src="" alt="">
                     </div>
                 </div>
+                <!-- end Perfil -->
+
             </div>
             <div class="contenido">
                 <div class="jobs">
@@ -59,7 +92,8 @@
                         <p class="size">02</p>
                     </div>
                     <div class="job celeste">
-                        <i class="icono-bg fa-book-open"></i>
+
+                        <i class="icono-bg fas fa-book-open"></i>
                         <p>Post a job</p>
                         <p class="size">00</p>
                     </div>
@@ -86,8 +120,8 @@
                             <span>UX Designer Any Locations Any Industries </span>
                         </div>
                         <div class="icons">
-                            <i class="fas fa-sliders-h"></i>
-                            <i class="fas fa-th-large"></i>
+                            <i class="icon-menu fas fa-sliders-h"></i>
+                            <i class="icon-menu fas fa-th-large"></i>
                         </div>
                     </div>
                     <div class="cards" id="cards">
@@ -99,7 +133,7 @@
         </div>
     </div>
     </div>
-    <img src="static/1.jpg" alt="">
+    <!-- <img src="static/1.jpg" alt=""> -->
 </body>
 
 </html>

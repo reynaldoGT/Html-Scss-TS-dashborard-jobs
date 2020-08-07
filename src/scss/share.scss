@@ -1,3 +1,5 @@
+@import "media";
+
 .group-icons {
     display: flex;
     flex-direction: column;
@@ -5,7 +7,7 @@
 
 .icono {
     font-size: 20px;
-    
+
     padding: 20px 0;
     color: $text_color;
     display: flex;
@@ -21,8 +23,53 @@
 .borde {
     border: 1px solid $text_color;
     border-radius: 5px;
-    &:hover{
+    &:hover {
         cursor: pointer;
     }
 }
 
+.menu-responsive {
+    padding: 20px;
+    display: flex;
+    color: $text_color;
+    justify-content: space-between;
+    display: none;
+
+    @include media(sm) {
+        display: flex;
+    }
+}
+
+// <div class="dash-item">
+//     <i class="icono fas fa-home"></i>
+//     <span>Home</span>
+// </div>
+
+.dash-item {
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.title {
+        justify-content: flex-start;
+        span {
+            font-size: 20px;
+        }
+    }
+    i {
+        color: white;
+    }
+    @include media(sm) {
+        justify-content: space-between;
+        color: white;
+    }
+    span {
+        color: white;
+        margin-left: 16px;
+        display: none;
+        @include media(sm) {
+            display: block;
+            color: white;
+        }
+    }
+}

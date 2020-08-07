@@ -10,28 +10,42 @@
 }
 
 .container {
-    width: 100%;
-
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: 7% 1fr;
+    grid-template-columns: 15% 1fr;
     grid-template-rows: 700px;
     grid-template-areas:
         "dashboard header"
         "dashboard contenido";
+    @include media(sm) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        grid-template-areas:
+            "header"
+            "contenido";
+    }
     .dashboard {
+        @include media(sm) {
+            position: absolute;
+            transform: translate(-100%);
+            transition: 0.2s ease all;
+            z-index: 10;
+            width: 60%;
+            height: 100vh;
+            background: rgb(239, 134, 44);
+            background: linear-gradient(180deg, rgba(239, 134, 44, 1) 24%, rgba(255, 66, 138, 1) 74%);
+        }
+        &.active-responsive {
+            transform: translate(0%);
+        }
         grid-area: dashboard;
         background: white;
+
         .iconos {
-            .group-icons {
-                .logo {
-                    display: flex;
-                    justify-content: center;
-                    color: $text_color;
-                    font-size: 20px;
-                    font-weight: bold;
-                }
-            }
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -47,8 +61,12 @@
             justify-content: space-between;
             padding: 10px;
             font-size: 15px;
-
+            @include media(sm) {
+                width: 100%;
+                justify-content: flex-start;
+            }
             .search {
+                position: relative;
                 align-self: center;
                 input {
                     width: 250px;
@@ -57,6 +75,9 @@
                     background: #fff;
                 }
                 .fas {
+                    position: absolute;
+                    right: 0;
+                    top: 5px;
                 }
                 .boton {
                     padding: 10px 20px;
@@ -64,6 +85,10 @@
                     border: 2px solid white;
                     font-weight: bold;
                     border-radius: 5px;
+                    @include media(sm) {
+                        margin: 10px 0;
+                        width: 100%;
+                    }
                     &:hover {
                         cursor: pointer;
                     }
@@ -72,7 +97,10 @@
             .perfil {
                 display: flex;
                 align-self: center;
-
+                @include media(sm) {
+                    flex-direction: column;
+                    align-self: flex-start;
+                }
                 .far {
                     padding: 12px;
                     margin: 0px 15px;
@@ -95,13 +123,8 @@
                 padding: 20px 0px;
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                @include media(md) {
-                    grid-template-columns: 33% 33% 33%;
-                }
+
                 @include media(sm) {
-                    grid-template-columns: 50% 50%;
-                }
-                @include media(xs) {
                     grid-template-columns: 1fr;
                 }
                 gap: 15px;
@@ -112,7 +135,7 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    transition: .3s ease all;
+                    transition: 0.3s ease all;
                     &:hover {
                         cursor: pointer;
                         -webkit-box-shadow: 1px 1px 4px 3px rgba(89, 82, 89, 1);
@@ -144,16 +167,17 @@
                 justify-content: space-between;
                 background: rgb(239, 134, 44);
                 background: linear-gradient(90deg, rgba(239, 134, 44, 1) 40%, rgba(255, 66, 138, 1) 81%);
-                @include media(xs) {
+                @include media(sm) {
                     flex-direction: column;
+                    padding: 20px 10px;
                 }
                 i {
                     margin-right: 15px;
                 }
                 .informacion {
                     color: white;
-
                     display: flex;
+
                     .seejobs {
                         font-size: 18px;
                         align-self: center;
@@ -163,6 +187,9 @@
                             font-weight: normal;
                             display: block;
                             font-size: 11px;
+                            @include media(sm) {
+                                margin: 5px 0;
+                            }
                         }
                     }
                 }
@@ -173,8 +200,9 @@
                     font-weight: bold;
                     color: #616161;
                     font-size: 15px;
-                    @include media(xs) {
-                        padding: 0;
+                    @include media(sm) {
+                        margin-top: 10px;
+                        padding: 5px 0;
                     }
                     &:hover {
                         cursor: pointer;
@@ -197,17 +225,22 @@
                             font-size: 14px;
                         }
                     }
-                    .fa-th-large,
-                    .fa-sliders-h {
-                        margin: 5px;
-                        font-size: 20px;
-                        padding: 5px;
-                        color: #616161;
-                        border: 1px solid #616161;
-                        &:hover {
-                            color: #ff6ea6;
-                            cursor: pointer;
-                            border: 1px solid #ff6ea6;
+                    .icons {
+                        @include media(sm) {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .icon-menu {
+                            margin: 5px;
+                            font-size: 20px;
+                            padding: 5px;
+                            color: #616161;
+                            border: 1px solid #616161;
+                            &:hover {
+                                color: #ff6ea6;
+                                cursor: pointer;
+                                border: 1px solid #ff6ea6;
+                            }
                         }
                     }
                 }
@@ -219,7 +252,7 @@
                         grid-template-columns: repeat(3, 1fr);
                     }
                     @include media(sm) {
-                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-columns: 1fr;
                     }
                     @include media(xs) {
                         grid-template-columns: 1fr;
@@ -241,7 +274,10 @@
                             width: 100px;
                             height: 100px;
                             background: #ccc;
-                            border-radius: 50%;
+                            border-radius: 100%;
+                            @include media(sm) {
+                                margin-bottom: 8px;
+                            }
                         }
                         i {
                             color: #808080;
@@ -268,6 +304,9 @@
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
+                        @include media(sm) {
+                            margin: 8px 0;
+                        }
                         .seemore {
                             padding: 8px 30px;
                             border-radius: 3px;

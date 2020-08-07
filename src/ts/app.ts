@@ -2,13 +2,17 @@ import "../scss/styles.scss";
 import { cards } from "./cards";
 
 import { ajax } from 'rxjs/ajax';
-import { pluck } from 'rxjs/operators';
 
 import Swal from 'sweetalert2';
 
 
 
-const jobs: NodeListOf<Element> = document.querySelectorAll('.job');
+const jobs: NodeListOf<Element> = document.querySelectorAll('.job'),
+    menu_responsive = document.getElementById('menu-bars-responsive');
+
+menu_responsive.addEventListener('click', e => {
+    document.getElementById('dasboard').classList.toggle('active-responsive');
+})
 
 jobs.forEach((element, i: number) => {
     element.addEventListener('click', () => {
@@ -90,3 +94,4 @@ cards_active.forEach(card => {
         });
     })
 })
+

@@ -1,6 +1,6 @@
 $breakpoint-sm: 320px;
-$breakpoint-md: 768PX;
-$breakpoint-lg: 1024PX;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
 
 @mixin media($media) {
     @if $media == xs {
@@ -17,7 +17,21 @@ $breakpoint-lg: 1024PX;
         }
     } @else if $media == lg {
         @media (min-width: $breakpoint-lg) {
-            @content;
+            @contentdash;
         }
     }
 }
+
+//? poara poder usar se usa asi
+// * Variables para  usar
+//? sm = 320px
+//? md = 768PX
+//? lg = 1024PX
+
+//? dentro de otros archivos
+
+// @include media(sm) {
+//      .codigo para poner{
+
+// }
+// }
